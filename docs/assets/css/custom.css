@@ -1,0 +1,103 @@
+/*
+ * Debugging Guide 2026 — Custom Stylesheet
+ * Monochrome / black-and-white aesthetic
+ * Applied on top of Material for MkDocs base theme
+ *
+ * Symbol legend used throughout the guide:
+ *   ◉  Foundational
+ *   ◈  Investigative
+ *   ◆  Strategic
+ *   ◎  Cross-Cutting (all levels)
+ *   ▣  Exercise
+ *   ⌨  Platform-Specific Note
+ */
+
+/* ─── Typography ─────────────────────────────────────────────── */
+
+:root {
+  --md-text-font: "IBM Plex Mono", "Courier New", monospace;
+  --md-code-font: "IBM Plex Mono", "Courier New", monospace;
+}
+
+/* ─── Code blocks ─────────────────────────────────────────────── */
+
+.md-typeset code {
+  font-size: 0.85em;
+}
+
+.md-typeset pre > code {
+  font-size: 0.82em;
+  line-height: 1.6;
+}
+
+/* ─── Tables ──────────────────────────────────────────────────── */
+
+.md-typeset table:not([class]) {
+  font-size: 0.85em;
+  width: 100%;
+}
+
+.md-typeset table:not([class]) th {
+  background-color: var(--md-default-fg-color--lightest);
+  font-weight: 700;
+}
+
+/* ─── Blockquotes ─────────────────────────────────────────────── */
+
+.md-typeset blockquote {
+  border-left: 4px solid var(--md-default-fg-color);
+  color: var(--md-default-fg-color);
+  font-style: italic;
+}
+
+/* ─── Checklist / task list items ────────────────────────────── */
+
+.md-typeset .task-list-item {
+  list-style: none;
+}
+
+.md-typeset .task-list-indicator::before {
+  background-color: transparent;
+  border: 1.5px solid var(--md-default-fg-color);
+}
+
+/* ─── Navigation ──────────────────────────────────────────────── */
+
+.md-nav__title {
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+/* ─── Section index pages: landing card layout ───────────────── */
+
+.section-card {
+  border: 1px solid var(--md-default-fg-color--lighter);
+  padding: 1rem 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.section-card h3 {
+  margin-top: 0;
+}
+
+/* ─── Print styles ────────────────────────────────────────────── */
+
+@media print {
+  .md-header,
+  .md-tabs,
+  .md-sidebar,
+  .md-footer {
+    display: none !important;
+  }
+
+  .md-content {
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .md-typeset {
+    font-size: 11pt;
+    line-height: 1.6;
+  }
+}

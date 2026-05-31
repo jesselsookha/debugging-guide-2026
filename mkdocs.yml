@@ -1,0 +1,135 @@
+site_name: Debugging Guide 2026
+site_description: A practical, progressive guide to debugging software — from first error message to professional practice
+site_author: Jessel Sookha
+site_url: https://jesselsookha.github.io/debugging-guide-2026/
+
+docs_dir: docs
+site_dir: site
+
+theme:
+  name: material
+  language: en
+  features:
+    - navigation.expand
+    - navigation.sections
+    - navigation.indexes
+    - navigation.top
+    - navigation.footer
+    - search.highlight
+    - search.suggest
+    - content.code.copy
+    - content.code.annotate
+    - toc.follow
+  palette:
+    - scheme: default
+      primary: black
+      accent: grey
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: black
+      accent: grey
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  font:
+    text: IBM Plex Mono
+    code: IBM Plex Mono
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - admonition
+  - pymdownx.details
+  - pymdownx.tabbed:
+      alternate_style: true
+  - tables
+  - footnotes
+  - attr_list
+  - md_in_html
+  - toc:
+      permalink: true
+      toc_depth: 3
+
+plugins:
+  - search:
+      lang: en
+
+extra_css:
+  - assets/css/custom.css
+
+nav:
+  - Home: index.md
+
+  - "00 · Introduction":
+    - 00_introduction/index.md
+    - What is Debugging?: 00_introduction/what_is_debugging.md
+    - The Debugging Mindset: 00_introduction/debugging_mindset.md
+    - How to Use This Guide: 00_introduction/how_to_use.md
+    - A Brief History of Debugging: 00_introduction/brief_history.md
+
+  - "01 · Foundations — The Foundational Debugger":
+    - 01_foundations/index.md
+    - Understanding Errors: 01_foundations/understanding_errors.md
+    - Reading Error Messages: 01_foundations/reading_error_messages.md
+    - The Basic Debugging Workflow: 01_foundations/basic_workflow.md
+    - Asking for Help (Human or AI): 01_foundations/asking_for_help.md
+    - Foundation Exercises: 01_foundations/foundation_exercises.md
+
+  - "02 · Investigation — The Investigative Debugger":
+    - 02_investigation/index.md
+    - The Investigative Mindset: 02_investigation/investigative_mindset.md
+    - Core Investigation Skills: 02_investigation/core_investigation_skills.md
+    - Print and Log Debugging: 02_investigation/print_log_debugging.md
+    - Using a Debugger: 02_investigation/using_a_debugger.md
+    - Stack Trace Analysis: 02_investigation/stack_trace_analysis.md
+    - IDE-Specific Notes (Summary): 02_investigation/ide_specific_notes.md
+    - Investigation Exercises: 02_investigation/investigation_exercises.md
+
+  - "03 · Strategy — The Strategic Debugger":
+    - 03_strategy/index.md
+    - Debugging in Systems: 03_strategy/debugging_in_systems.md
+    - Professional Debugging Practices: 03_strategy/professional_practices.md
+    - Preventive Measures: 03_strategy/preventive_measures.md
+    - Strategy Exercises: 03_strategy/strategy_exercises.md
+
+  - "04 · Tools, Techniques & Thinking":
+    - 04_tools_techniques/index.md
+    - Debugging Techniques (Quick Reference): 04_tools_techniques/techniques_reference.md
+    - Debugging Tools Overview: 04_tools_techniques/tools_overview.md
+    - Finding Help: 04_tools_techniques/finding_help.md
+    - Developing Debugging Skills Over Time: 04_tools_techniques/developing_skills.md
+
+  - "05 · Appendices":
+    - 05_appendices/index.md
+    - "A · One-Page Debugging Checklist": 05_appendices/checklist.md
+    - "B · Trace Tables": 05_appendices/trace_tables.md
+    - "C · Common Error Glossary": 05_appendices/error_glossary.md
+    - "D · Debugging Anti-Patterns": 05_appendices/anti_patterns.md
+    - "E · Assessment Prompts": 05_appendices/assessment_prompts.md
+    - "F · Lab Exercises by Level": 05_appendices/lab_exercises.md
+    - "G · Platform Notes":
+      - "Android Studio / Logcat": 05_appendices/platform_android_studio.md
+      - "VS Code / Terminal": 05_appendices/platform_vscode.md
+      - "Visual Studio / Watch Windows": 05_appendices/platform_visual_studio.md
+      - "NetBeans / IntelliJ": 05_appendices/platform_netbeans_intellij.md
+      - "Web / Browser DevTools": 05_appendices/platform_browser_devtools.md
+    - "H · Acknowledgments & References": 05_appendices/references.md
+
+extra:
+  generator: false
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/jesselsookha/debugging-guide-2026
+      name: GitHub Repository
+
+copyright: >
+  &copy; 2026 Jessel Sookha.
+  This work is licensed under
+  <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a>.
