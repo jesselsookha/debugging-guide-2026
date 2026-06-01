@@ -98,4 +98,4 @@ The tools available for each of these steps have become dramatically more powerf
 
 *You have reached the end of the Introduction section.*
 
-*Continue to: [01 · Foundations — Understanding Errors →](../01_foundations/understanding_errors.md)*
+*Continue to: [01 · Foundations →](../01_foundations/index.md)*

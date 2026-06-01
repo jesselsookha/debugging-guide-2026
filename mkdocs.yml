@@ -53,6 +53,7 @@ markdown_extensions:
   - footnotes
   - attr_list
   - md_in_html
+  - abbr
   - toc:
       permalink: true
       toc_depth: 3
