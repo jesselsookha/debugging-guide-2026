@@ -1,25 +1,31 @@
 name: Deploy Debugging Guide to GitHub Pages
 
+# Triggers: every push to main, or manually via Actions tab
 on:
   push:
     branches:
       - main
   workflow_dispatch:
 
+# Required permissions for GitHub Pages deployment
 permissions:
   contents: read
   pages: write
   id-token: write
 
+# Only one deployment runs at a time
 concurrency:
   group: "pages"
   cancel-in-progress: false
 
 jobs:
+
+  # ─── Job 1: Build the MkDocs site ─────────────────────────────
   build:
     name: Build MkDocs Site
     runs-on: ubuntu-latest
     steps:
+
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
@@ -37,11 +43,13 @@ jobs:
       - name: Build MkDocs site
         run: mkdocs build --strict
 
+      # Packages the compiled site/ folder as a Pages artifact
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: site/
 
+  # ─── Job 2: Deploy the artifact to GitHub Pages ───────────────
   deploy:
     name: Deploy to GitHub Pages
     needs: build
@@ -50,6 +58,12 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
+
+      # Initialises the Pages environment — must run before deploy
+      # This was the missing step that caused the 404 error
+      - name: Configure Pages
+        uses: actions/configure-pages@v4
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
