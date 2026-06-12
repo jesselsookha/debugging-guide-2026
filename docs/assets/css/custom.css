@@ -1,7 +1,18 @@
 /*
  * Debugging Guide 2026 — Custom Stylesheet
- * Monochrome / black-and-white aesthetic
  * Applied on top of Material for MkDocs base theme
+ *
+ * Colour palette derived from:
+ *   sweet-brown    #B0323A
+ *   dutch-white    #F0D8C3
+ *   mustard-brown  #C87C0C
+ *   gunmetal       #2B3537
+ *   cadet-grey     #8AA8AB
+ *
+ * Fonts:
+ *   Headings        — Work Sans ExtraBold (800)
+ *   Body / sub-head — Work Sans Regular (400)
+ *   Code            — Fira Mono
  *
  * Symbol legend used throughout the guide:
  *   ◉  Foundational
@@ -12,16 +23,126 @@
  *   ⌨  Platform-Specific Note
  */
 
-/* ─── Typography ─────────────────────────────────────────────── */
+/* ════════════════════════════════════════════════════════════════
+   COLOUR PALETTE — LIGHT THEME (default scheme, primary/accent: custom)
+   Base: dutch-white | Text: gunmetal | Accents: sweet-brown / mustard-brown
+   ════════════════════════════════════════════════════════════════ */
+
+[data-md-color-scheme="default"][data-md-color-primary="custom"] {
+  /* Header, top tab bar, and primary brand colour */
+  --md-primary-fg-color:             #8A2730;   /* sweet-brown, deepened for AA contrast with white text */
+  --md-primary-fg-color--light:      #B0323A;   /* sweet-brown, true value — used for hover states */
+  --md-primary-fg-color--dark:       #6E1F26;
+  --md-primary-bg-color:             #F0D8C3;   /* dutch-white — text/icons sitting on primary bg */
+  --md-primary-bg-color--light:      #F6E8DA;
+
+  /* Page background and base text */
+  --md-default-bg-color:             #FBF4ED;   /* warm off-white, softer than pure dutch-white for body copy */
+  --md-default-fg-color:             #2B3537;   /* gunmetal */
+  --md-default-fg-color--light:      #4A5759;
+  --md-default-fg-color--lighter:    #8AA8AB;   /* cadet-grey — borders, muted dividers */
+  --md-default-fg-color--lightest:   #E4DCD3;   /* tinted dutch-white — table headers, subtle fills */
+
+  /* Code blocks */
+  --md-code-bg-color:                #F0D8C3;   /* dutch-white */
+  --md-code-fg-color:                #2B3537;   /* gunmetal */
+}
+
+[data-md-color-scheme="default"][data-md-color-accent="custom"] {
+  /* Links, hover highlights, active nav items */
+  --md-accent-fg-color:              #C87C0C;   /* mustard-brown */
+  --md-accent-fg-color--transparent: #C87C0C1A;
+  --md-accent-bg-color:              #2B3537;
+  --md-accent-bg-color--light:       #4A5759;
+}
+
+/* ════════════════════════════════════════════════════════════════
+   COLOUR PALETTE — DARK THEME (slate scheme, primary/accent: custom)
+   Base: gunmetal | Text: dutch-white | Accents: lightened sweet-brown / mustard-brown
+   ════════════════════════════════════════════════════════════════ */
+
+[data-md-color-scheme="slate"][data-md-color-primary="custom"] {
+  /* Header and top tab bar */
+  --md-primary-fg-color:             #1E2628;   /* darkened gunmetal */
+  --md-primary-fg-color--light:      #3A4548;
+  --md-primary-fg-color--dark:       #15191B;
+  --md-primary-bg-color:             #F0D8C3;   /* dutch-white text on header */
+  --md-primary-bg-color--light:      #F6E8DA;
+
+  /* Page background and base text */
+  --md-default-bg-color:             #20282A;   /* gunmetal, slightly lifted for readability */
+  --md-default-fg-color:             #F0D8C3;   /* dutch-white */
+  --md-default-fg-color--light:      #D9C4B2;
+  --md-default-fg-color--lighter:    #8AA8AB;   /* cadet-grey — borders, muted dividers */
+  --md-default-fg-color--lightest:   #324044;   /* lifted gunmetal — table headers, subtle fills */
+
+  /* Code blocks */
+  --md-code-bg-color:                #1A2123;
+  --md-code-fg-color:                #F0D8C3;
+}
+
+[data-md-color-scheme="slate"][data-md-color-accent="custom"] {
+  /* Links, hover highlights, active nav items — lightened for dark backgrounds */
+  --md-accent-fg-color:              #E0A33E;   /* lightened mustard-brown */
+  --md-accent-fg-color--transparent: #E0A33E1A;
+  --md-accent-bg-color:              #2B3537;
+  --md-accent-bg-color--light:       #4A5759;
+}
+
+/* Shared: footer colour for both schemes uses the deep sweet-brown */
+[data-md-color-primary="custom"] .md-footer {
+  background-color: #6E1F26;
+}
+
+/* ════════════════════════════════════════════════════════════════
+   TYPOGRAPHY
+   ════════════════════════════════════════════════════════════════ */
 
 :root {
-  --md-text-font: "IBM Plex Mono", "Courier New", monospace;
-  --md-code-font: "IBM Plex Mono", "Courier New", monospace;
+  --md-text-font: "Work Sans", -apple-system, sans-serif;
+  --md-code-font: "Fira Mono", "Courier New", monospace;
+}
+
+/* Headings — Work Sans ExtraBold (800) */
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3,
+.md-typeset h4,
+.md-typeset h5,
+.md-typeset h6 {
+  font-family: "Work Sans", sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+/* Body text and sub-headings — Work Sans Regular (400) */
+.md-typeset {
+  font-family: "Work Sans", sans-serif;
+  font-weight: 400;
+}
+
+/* Bold text within body copy stays clearly distinguishable */
+.md-typeset strong {
+  font-weight: 700;
+}
+
+/* Site title in header — ExtraBold for brand presence */
+.md-header__title,
+.md-tabs__link {
+  font-family: "Work Sans", sans-serif;
+  font-weight: 800;
+}
+
+.md-tabs__link {
+  font-weight: 700;
+  font-size: 0.78rem;
+  letter-spacing: 0.02em;
 }
 
 /* ─── Code blocks ─────────────────────────────────────────────── */
 
 .md-typeset code {
+  font-family: "Fira Mono", "Courier New", monospace;
   font-size: 0.85em;
 }
 
@@ -30,7 +151,9 @@
   line-height: 1.6;
 }
 
-/* ─── Tables ──────────────────────────────────────────────────── */
+/* ════════════════════════════════════════════════════════════════
+   TABLES
+   ════════════════════════════════════════════════════════════════ */
 
 .md-typeset table:not([class]) {
   font-size: 0.85em;
@@ -40,17 +163,22 @@
 .md-typeset table:not([class]) th {
   background-color: var(--md-default-fg-color--lightest);
   font-weight: 700;
+  color: var(--md-default-fg-color);
 }
 
-/* ─── Blockquotes ─────────────────────────────────────────────── */
+/* ════════════════════════════════════════════════════════════════
+   BLOCKQUOTES
+   ════════════════════════════════════════════════════════════════ */
 
 .md-typeset blockquote {
-  border-left: 4px solid var(--md-default-fg-color);
+  border-left: 4px solid var(--md-accent-fg-color);
   color: var(--md-default-fg-color);
   font-style: italic;
 }
 
-/* ─── Checklist / task list items ────────────────────────────── */
+/* ════════════════════════════════════════════════════════════════
+   CHECKLIST / TASK LIST ITEMS
+   ════════════════════════════════════════════════════════════════ */
 
 .md-typeset .task-list-item {
   list-style: none;
@@ -61,14 +189,58 @@
   border: 1.5px solid var(--md-default-fg-color);
 }
 
-/* ─── Navigation ──────────────────────────────────────────────── */
+/* ════════════════════════════════════════════════════════════════
+   ADMONITIONS — tie accent colours into the existing call-out system
+   ════════════════════════════════════════════════════════════════ */
+
+.md-typeset .admonition.tip,
+.md-typeset .admonition.note {
+  border-color: var(--md-accent-fg-color);
+}
+
+.md-typeset .admonition.tip > .admonition-title,
+.md-typeset .admonition.note > .admonition-title {
+  background-color: var(--md-accent-fg-color--transparent);
+}
+
+.md-typeset .admonition.danger,
+.md-typeset .admonition.warning,
+.md-typeset .admonition.failure {
+  border-color: #B0323A;
+}
+
+[data-md-color-scheme="slate"] .md-typeset .admonition.danger,
+[data-md-color-scheme="slate"] .md-typeset .admonition.warning,
+[data-md-color-scheme="slate"] .md-typeset .admonition.failure {
+  border-color: #D9707A;
+}
+
+/* ════════════════════════════════════════════════════════════════
+   NAVIGATION — tabs (top) and sidebar (left, per-section pages)
+   ════════════════════════════════════════════════════════════════ */
 
 .md-nav__title {
   font-weight: 700;
   letter-spacing: 0.02em;
+  font-family: "Work Sans", sans-serif;
 }
 
-/* ─── Section index pages: landing card layout ───────────────── */
+/* Active tab indicator uses the accent colour for clear orientation */
+.md-tabs__link--active {
+  color: var(--md-primary-bg-color);
+  opacity: 1;
+  border-bottom: 3px solid var(--md-accent-fg-color);
+}
+
+/* Active sidebar item */
+.md-nav__link--active {
+  color: var(--md-accent-fg-color);
+  font-weight: 700;
+}
+
+/* ════════════════════════════════════════════════════════════════
+   SECTION INDEX PAGES — landing card layout
+   ════════════════════════════════════════════════════════════════ */
 
 .section-card {
   border: 1px solid var(--md-default-fg-color--lighter);
@@ -80,7 +252,63 @@
   margin-top: 0;
 }
 
-/* ─── Print styles ────────────────────────────────────────────── */
+/* ════════════════════════════════════════════════════════════════
+   RESPONSIVE LAYOUT — mobile refinements
+   ════════════════════════════════════════════════════════════════ */
+
+/* On screens narrower than Material's tablet breakpoint (~76.25em),
+   the tab bar collapses into the sidebar drawer automatically.
+   These rules fine-tune spacing and readability on small screens. */
+
+@media screen and (max-width: 76.1875em) {
+  /* Slightly tighter heading sizes so long titles wrap cleanly */
+  .md-typeset h1 {
+    font-size: 1.6rem;
+  }
+
+  .md-typeset h2 {
+    font-size: 1.3rem;
+  }
+
+  /* Tables remain horizontally scrollable rather than overflowing the page */
+  .md-typeset table:not([class]) {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  /* Reduce padding around content for small screens */
+  .md-content__inner {
+    padding: 0.6rem 0.8rem;
+  }
+}
+
+@media screen and (max-width: 44.9375em) {
+  /* Phone-width: further reduce heading scale and code font size */
+  .md-typeset h1 {
+    font-size: 1.4rem;
+  }
+
+  .md-typeset h2 {
+    font-size: 1.15rem;
+  }
+
+  .md-typeset h3 {
+    font-size: 1rem;
+  }
+
+  .md-typeset pre > code {
+    font-size: 0.75em;
+  }
+
+  .md-typeset code {
+    font-size: 0.78em;
+  }
+}
+
+/* ════════════════════════════════════════════════════════════════
+   PRINT STYLES
+   ════════════════════════════════════════════════════════════════ */
 
 @media print {
   .md-header,
@@ -99,5 +327,10 @@
   .md-typeset {
     font-size: 11pt;
     line-height: 1.6;
+    font-family: "Work Sans", sans-serif;
+  }
+
+  .md-typeset pre > code {
+    font-family: "Fira Mono", "Courier New", monospace;
   }
 }
