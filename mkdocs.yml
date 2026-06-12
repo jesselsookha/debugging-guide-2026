@@ -79,7 +79,7 @@ nav:
     - How to Use This Guide: 00_introduction/how_to_use.md
     - A Brief History of Debugging: 00_introduction/brief_history.md
 
-  - "01 · Foundations — The Foundational Debugger":
+  - "01 · Foundations":
     - 01_foundations/index.md
     - Understanding Errors: 01_foundations/understanding_errors.md
     - Reading Error Messages: 01_foundations/reading_error_messages.md
@@ -87,7 +87,7 @@ nav:
     - Asking for Help (Human or AI): 01_foundations/asking_for_help.md
     - Foundation Exercises: 01_foundations/foundation_exercises.md
 
-  - "02 · Investigation — The Investigative Debugger":
+  - "02 · Investigation":
     - 02_investigation/index.md
     - The Investigative Mindset: 02_investigation/investigative_mindset.md
     - Core Investigation Skills: 02_investigation/core_investigation_skills.md
@@ -97,14 +97,14 @@ nav:
     - IDE-Specific Notes (Summary): 02_investigation/ide_specific_notes.md
     - Investigation Exercises: 02_investigation/investigation_exercises.md
 
-  - "03 · Strategy — The Strategic Debugger":
+  - "03 · Strategy":
     - 03_strategy/index.md
     - Debugging in Systems: 03_strategy/debugging_in_systems.md
     - Professional Debugging Practices: 03_strategy/professional_practices.md
     - Preventive Measures: 03_strategy/preventive_measures.md
     - Strategy Exercises: 03_strategy/strategy_exercises.md
 
-  - "04 · Tools, Techniques & Thinking":
+  - "04 · Tools":
     - 04_tools_techniques/index.md
     - Debugging Techniques (Quick Reference): 04_tools_techniques/techniques_reference.md
     - Debugging Tools Overview: 04_tools_techniques/tools_overview.md
