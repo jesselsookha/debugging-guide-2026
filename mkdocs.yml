@@ -10,32 +10,36 @@ theme:
   name: material
   language: en
   features:
-    - navigation.expand
+    - navigation.tabs
+    - navigation.tabs.sticky
     - navigation.sections
     - navigation.indexes
     - navigation.top
     - navigation.footer
+    - navigation.tracking
     - search.highlight
     - search.suggest
     - content.code.copy
     - content.code.annotate
     - toc.follow
   palette:
+    # Light theme — dutch-white base, gunmetal text, sweet-brown/mustard-brown accents
     - scheme: default
-      primary: black
-      accent: grey
+      primary: custom
+      accent: custom
       toggle:
-        icon: material/brightness-7
+        icon: material/weather-night
         name: Switch to dark mode
+    # Dark theme — gunmetal base, dutch-white text, lightened accents
     - scheme: slate
-      primary: black
-      accent: grey
+      primary: custom
+      accent: custom
       toggle:
-        icon: material/brightness-4
+        icon: material/weather-sunny
         name: Switch to light mode
   font:
-    text: IBM Plex Mono
-    code: IBM Plex Mono
+    text: Work Sans
+    code: Fira Mono
 
 markdown_extensions:
   - pymdownx.highlight:
@@ -128,7 +132,8 @@ extra:
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/jesselsookha/debugging-guide-2026
-      name: GitHub Repository
+      name: Debugging Guide on GitHub
+    - icon: fontawesome/brands/linkedin
       link: https://www.linkedin.com/in/jesselsookha/
       name: Jessel Sookha on LinkedIn
 
