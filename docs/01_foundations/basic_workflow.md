@@ -29,27 +29,27 @@ The workflow introduced here is foundational. It applies to every error type, ev
   <text x="260" y="270" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="12" fill="currentColor" font-weight="700">WORKFLOW</text>
   <text x="260" y="288" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10" fill="currentColor" opacity="0.7">← repeat →</text>
 
-  <!-- Step nodes — positioned at 60° intervals starting from top (270°) -->
-  <!-- Step I   — top          (260, 40)  -->
-  <!-- Step II  — top-right    (459, 160) -->
-  <!-- Step III — bottom-right (459, 360) -->
-  <!-- Step IV  — bottom       (260, 480) -->
-  <!-- Step V   — bottom-left  (61,  360) -->
-  <!-- Step VI  — top-left     (61,  160) -->
+  <!-- Step nodes — exact positions on circle radius 230, center 260,260 -->
+  <!-- Step I   — top          (260, 30)   -->
+  <!-- Step II  — top-right    (459.1, 145) -->
+  <!-- Step III — bottom-right (459.1, 375) -->
+  <!-- Step IV  — bottom       (260, 490)  -->
+  <!-- Step V   — bottom-left  (60.9, 375) -->
+  <!-- Step VI  — top-left     (60.9, 145) -->
 
-  <!-- Connecting arcs (curved arrows between nodes) -->
+  <!-- Connecting arcs (perfect circular arcs) -->
   <!-- I → II -->
-  <path d="M 320 68 Q 420 90 430 168" fill="none" stroke="currentColor" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <path d="M 320 58 A 230 230 0 0 1 421 135" fill="none" stroke="currentColor" stroke-width="1.5" marker-end="url(#arrow)"/>
   <!-- II → III -->
-  <path d="M 452 220 Q 475 260 452 300" fill="none" stroke="currentColor" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <path d="M 459 190 A 230 230 0 0 1 459 330" fill="none" stroke="currentColor" stroke-width="1.5" marker-end="url(#arrow)"/>
   <!-- III → IV -->
-  <path d="M 430 352 Q 420 430 320 452" fill="none" stroke="currentColor" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <path d="M 421 385 A 230 230 0 0 1 320 462" fill="none" stroke="currentColor" stroke-width="1.5" marker-end="url(#arrow)"/>
   <!-- IV → V -->
-  <path d="M 200 452 Q 100 430 90 352" fill="none" stroke="currentColor" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <path d="M 200 462 A 230 230 0 0 1 99 385" fill="none" stroke="currentColor" stroke-width="1.5" marker-end="url(#arrow)"/>
   <!-- V → VI -->
-  <path d="M 68 300 Q 45 260 68 220" fill="none" stroke="currentColor" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <path d="M 61 330 A 230 230 0 0 1 61 190" fill="none" stroke="currentColor" stroke-width="1.5" marker-end="url(#arrow)"/>
   <!-- VI → I -->
-  <path d="M 90 168 Q 100 90 200 68" fill="none" stroke="currentColor" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <path d="M 99 135 A 230 230 0 0 1 200 58" fill="none" stroke="currentColor" stroke-width="1.5" marker-end="url(#arrow)"/>
 
   <!-- Arrowhead marker -->
   <defs>
@@ -59,40 +59,40 @@ The workflow introduced here is foundational. It applies to every error type, ev
   </defs>
 
   <!-- Step I — top -->
-  <circle cx="260" cy="52" r="36" fill="currentColor"/>
-  <text x="260" y="47" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="9" fill="white" font-weight="700">STEP I</text>
-  <text x="260" y="60" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="8.5" fill="white">STOP</text>
-  <text x="260" y="71" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="8.5" fill="white">&amp; READ</text>
+  <circle cx="260" cy="30" r="36" fill="currentColor"/>
+  <text x="260" y="25" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="9" fill="white" font-weight="700">STEP I</text>
+  <text x="260" y="38" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="8.5" fill="white">STOP</text>
+  <text x="260" y="49" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="8.5" fill="white">&amp; READ</text>
 
   <!-- Step II — top-right -->
-  <circle cx="448" cy="188" r="36" fill="currentColor"/>
-  <text x="448" y="183" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="9" fill="white" font-weight="700">STEP II</text>
-  <text x="448" y="196" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="8.5" fill="white">IDENTIFY</text>
-  <text x="448" y="207" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="8.5" fill="white">TYPE</text>
+  <circle cx="459.1" cy="145" r="36" fill="currentColor"/>
+  <text x="459.1" y="140" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="9" fill="white" font-weight="700">STEP II</text>
+  <text x="459.1" y="153" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="8.5" fill="white">IDENTIFY</text>
+  <text x="459.1" y="164" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="8.5" fill="white">TYPE</text>
 
   <!-- Step III — bottom-right -->
-  <circle cx="448" cy="332" r="36" fill="currentColor"/>
-  <text x="448" y="327" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="9" fill="white" font-weight="700">STEP III</text>
-  <text x="448" y="340" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="8.5" fill="white">LOCATE</text>
-  <text x="448" y="351" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="8.5" fill="white">SOURCE</text>
+  <circle cx="459.1" cy="375" r="36" fill="currentColor"/>
+  <text x="459.1" y="370" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="9" fill="white" font-weight="700">STEP III</text>
+  <text x="459.1" y="383" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="8.5" fill="white">LOCATE</text>
+  <text x="459.1" y="394" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="8.5" fill="white">SOURCE</text>
 
   <!-- Step IV — bottom -->
-  <circle cx="260" cy="468" r="36" fill="currentColor"/>
-  <text x="260" y="463" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="9" fill="white" font-weight="700">STEP IV</text>
-  <text x="260" y="476" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="8.5" fill="white">EXPECTED</text>
-  <text x="260" y="487" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="8.5" fill="white">vs ACTUAL</text>
+  <circle cx="260" cy="490" r="36" fill="currentColor"/>
+  <text x="260" y="485" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="9" fill="white" font-weight="700">STEP IV</text>
+  <text x="260" y="498" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="8.5" fill="white">EXPECTED</text>
+  <text x="260" y="509" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="8.5" fill="white">vs ACTUAL</text>
 
   <!-- Step V — bottom-left -->
-  <circle cx="72" cy="332" r="36" fill="currentColor"/>
-  <text x="72" y="327" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="9" fill="white" font-weight="700">STEP V</text>
-  <text x="72" y="340" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="8.5" fill="white">ONE</text>
-  <text x="72" y="351" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="8.5" fill="white">CHANGE</text>
+  <circle cx="60.9" cy="375" r="36" fill="currentColor"/>
+  <text x="60.9" y="370" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="9" fill="white" font-weight="700">STEP V</text>
+  <text x="60.9" y="383" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="8.5" fill="white">ONE</text>
+  <text x="60.9" y="394" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="8.5" fill="white">CHANGE</text>
 
   <!-- Step VI — top-left -->
-  <circle cx="72" cy="188" r="36" fill="currentColor"/>
-  <text x="72" y="183" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="9" fill="white" font-weight="700">STEP VI</text>
-  <text x="72" y="196" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="8.5" fill="white">TEST &amp;</text>
-  <text x="72" y="207" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="8.5" fill="white">REPEAT</text>
+  <circle cx="60.9" cy="145" r="36" fill="currentColor"/>
+  <text x="60.9" y="140" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="9" fill="white" font-weight="700">STEP VI</text>
+  <text x="60.9" y="153" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="8.5" fill="white">TEST &amp;</text>
+  <text x="60.9" y="164" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="8.5" fill="white">REPEAT</text>
 
 </svg>
 </div>
@@ -272,16 +272,16 @@ Run the program. Observe the result.
 ## ◉ The Workflow in Full — A Reference Card
 
 ```
-┌─────────────────────────────────────────────────────────────────┐
-│  THE SIX-STEP DEBUGGING WORKFLOW                                │
-├─────────────────────────────────────────────────────────────────┤
-│  I.   STOP & READ    — Read the full error before touching code │
-│  II.  IDENTIFY       — What type of error is this?             │
-│  III. LOCATE         — What file, line, and method?            │
-│  IV.  COMPARE        — Expected output vs. actual output       │
-│  V.   ONE CHANGE     — Form a hypothesis. Change one thing.    │
-│  VI.  TEST & REPEAT  — Run. Observe. Return to I if needed.    │
-└─────────────────────────────────────────────────────────────────┘
+┌──────────────────────────────────────────────────────────────────┐
+│  THE SIX-STEP DEBUGGING WORKFLOW                                 │
+├──────────────────────────────────────────────────────────────────┤
+│  I.   STOP & READ    — Read the full error before touching code  │
+│  II.  IDENTIFY       — What type of error is this?               │
+│  III. LOCATE         — What file, line, and method?              │
+│  IV.  COMPARE        — Expected output vs. actual output         │
+│  V.   ONE CHANGE     — Form a hypothesis. Change one thing.      │
+│  VI.  TEST & REPEAT  — Run. Observe. Return to I if needed.      │
+└──────────────────────────────────────────────────────────────────┘
 ```
 
 !!! note "Save this. Use it."

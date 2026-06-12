@@ -154,17 +154,17 @@ If all seven are true, you are ready to ask — and your question will receive a
 ## ◎ The Quick Reference Card
 
 ```
-┌──────────────────────────────────────────────────────────────────┐
-│  DEBUGGING — QUICK REFERENCE                                     │
-├──────────────────────────────────────────────────────────────────┤
-│  STOP  →  READ  →  IDENTIFY  →  LOCATE  →  COMPARE  →  CHANGE   │
-├──────────────────────────────────────────────────────────────────┤
-│  ◉ FOUNDATIONAL:  File? Line? Message? Expected? One change?     │
-│  ◈ INVESTIGATIVE: Reproduce? Reduce? Hypothesise? One change?    │
-│  ◆ STRATEGIC:     Team aware? Tests updated? Fix documented?     │
-├──────────────────────────────────────────────────────────────────┤
-│  BEFORE ASKING:   Code (text) + Error + Context + Expected/Actual│
-└──────────────────────────────────────────────────────────────────┘
+┌────────────────────────────────────────────────────────────────────┐
+│  DEBUGGING — QUICK REFERENCE                                       │
+├────────────────────────────────────────────────────────────────────┤
+│  STOP  →  READ  →  IDENTIFY  →  LOCATE  →  COMPARE  →  CHANGE      │
+├────────────────────────────────────────────────────────────────────┤
+│  ◉ FOUNDATIONAL:  File? Line? Message? Expected? One change?       │
+│  ◈ INVESTIGATIVE: Reproduce? Reduce? Hypothesise? One change?      │
+│  ◆ STRATEGIC:     Team aware? Tests updated? Fix documented?       │
+├────────────────────────────────────────────────────────────────────┤
+│  BEFORE ASKING:   Code (text) + Error + Context + Expected/Actual  │
+└────────────────────────────────────────────────────────────────────┘
 ```
 
 ---
