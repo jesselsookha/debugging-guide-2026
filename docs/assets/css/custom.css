@@ -46,6 +46,13 @@
   /* Code blocks */
   --md-code-bg-color:                #F0D8C3;   /* dutch-white */
   --md-code-fg-color:                #2B3537;   /* gunmetal */
+
+  /* Body links — sweet-brown, hover to mustard-brown */
+  --md-typeset-a-color:              #B0323A;
+
+  /* Table borders and rules — cadet-grey */
+  --md-typeset-table-color:          #8AA8AB;
+  --md-typeset-table-color--light:   #C9D6D8;
 }
 
 [data-md-color-scheme="default"][data-md-color-accent="custom"] {
@@ -79,6 +86,13 @@
   /* Code blocks */
   --md-code-bg-color:                #1A2123;
   --md-code-fg-color:                #F0D8C3;
+
+  /* Body links — lightened mustard-brown, visible against gunmetal */
+  --md-typeset-a-color:              #E0A33E;
+
+  /* Table borders and rules — cadet-grey (works on dark too) */
+  --md-typeset-table-color:          #8AA8AB;
+  --md-typeset-table-color--light:   #3E4D50;
 }
 
 [data-md-color-scheme="slate"][data-md-color-accent="custom"] {
@@ -158,6 +172,12 @@
 .md-typeset table:not([class]) {
   font-size: 0.85em;
   width: 100%;
+  border: 1px solid var(--md-typeset-table-color);
+}
+
+.md-typeset table:not([class]) th,
+.md-typeset table:not([class]) td {
+  border: 1px solid var(--md-typeset-table-color);
 }
 
 .md-typeset table:not([class]) th {
@@ -236,6 +256,56 @@
 .md-nav__link--active {
   color: var(--md-accent-fg-color);
   font-weight: 700;
+}
+
+/* ─── Body links (including footer Previous/Next) — animated underline ─── */
+
+.md-typeset a {
+  color: var(--md-typeset-a-color);
+  text-decoration: none;
+  background-image: linear-gradient(var(--md-accent-fg-color), var(--md-accent-fg-color));
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 2px;
+  transition: background-size 0.25s ease, color 0.25s ease;
+}
+
+.md-typeset a:hover,
+.md-typeset a:focus {
+  color: var(--md-accent-fg-color);
+  background-size: 100% 2px;
+}
+
+/* Previous/Next footer navigation links specifically */
+.md-footer__link {
+  color: var(--md-typeset-a-color);
+  transition: opacity 0.25s ease;
+  opacity: 0.85;
+}
+
+.md-footer__link:hover,
+.md-footer__link:focus {
+  opacity: 1;
+}
+
+.md-footer__title,
+.md-footer__direction {
+  color: inherit;
+}
+
+/* ─── Sidebar (left nav) links — ensure visibility in dark theme ─── */
+
+[data-md-color-scheme="slate"] .md-nav__link {
+  color: var(--md-default-fg-color--light);
+}
+
+[data-md-color-scheme="slate"] .md-nav__link:hover,
+[data-md-color-scheme="slate"] .md-nav__link:focus {
+  color: var(--md-accent-fg-color);
+}
+
+[data-md-color-scheme="slate"] .md-nav__link--active {
+  color: var(--md-accent-fg-color);
 }
 
 /* ════════════════════════════════════════════════════════════════
